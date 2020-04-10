@@ -1,0 +1,29 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.demoliu"
+    },
+    "cordova-plugin-mipush": {
+      "MI_PUSH_APP_KEY": "5141836012815",
+      "MI_PUSH_APP_ID": "2882303761518360815",
+      "MI_PUSH_APP_IOS_KEY": "your_mipush_appkey",
+      "MI_PUSH_APP_IOS_ID": "your_mipush_appid",
+      "PACKAGE_NAME": "com.demoliu"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "com.demoliu"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.demoliu"
+    }
+  }
+}

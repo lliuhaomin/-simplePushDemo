@@ -1,0 +1,165 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "res/xml/config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Toast\"><param name=\"android-package\" value=\"nl.xservices.plugins.Toast\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"MiPushPlugin\"><param name=\"android-package\" value=\"com.ct.cordova.mipush.MiPushPlugin\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "AndroidManifest.xml": {
+        "parents": {
+          "/manifest": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.GET_TASKS\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<permission android:name=\"${applicationId}.permission.MIPUSH_RECEIVE\" android:protectionLevel=\"signature\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"${applicationId}.permission.MIPUSH_RECEIVE\" />",
+              "count": 1
+            }
+          ],
+          "/manifest/application": [
+            {
+              "xml": "<service android:enabled=\"true\" android:name=\"com.xiaomi.push.service.XMPushService\" android:process=\":pushservice\" />",
+              "count": 1
+            },
+            {
+              "xml": "<service android:enabled=\"true\" android:exported=\"false\" android:name=\"com.xiaomi.push.service.XMJobService\" android:permission=\"android.permission.BIND_JOB_SERVICE\" android:process=\":pushservice\" />",
+              "count": 1
+            },
+            {
+              "xml": "<service android:enabled=\"true\" android:exported=\"true\" android:name=\"com.xiaomi.mipush.sdk.PushMessageHandler\" />",
+              "count": 1
+            },
+            {
+              "xml": "<service android:enabled=\"true\" android:name=\"com.xiaomi.mipush.sdk.MessageHandleService\" />",
+              "count": 1
+            },
+            {
+              "xml": "<receiver android:exported=\"true\" android:name=\"com.xiaomi.push.service.receivers.NetworkStatusReceiver\"><intent-filter><action android:name=\"android.net.conn.CONNECTIVITY_CHANGE\" /><category android:name=\"android.intent.category.DEFAULT\" /></intent-filter></receiver>",
+              "count": 1
+            },
+            {
+              "xml": "<receiver android:exported=\"false\" android:name=\"com.xiaomi.push.service.receivers.PingReceiver\" android:process=\":pushservice\"><intent-filter><action android:name=\"com.xiaomi.push.PING_TIMER\" /></intent-filter></receiver>",
+              "count": 1
+            },
+            {
+              "xml": "<receiver android:exported=\"true\" android:name=\"com.ct.cordova.mipush.MiPushReceiver\"><intent-filter><action android:name=\"com.xiaomi.mipush.RECEIVE_MESSAGE\" /></intent-filter><intent-filter><action android:name=\"com.xiaomi.mipush.MESSAGE_ARRIVED\" /></intent-filter><intent-filter><action android:name=\"com.xiaomi.mipush.ERROR\" /></intent-filter></receiver>",
+              "count": 1
+            },
+            {
+              "xml": "<meta-data android:name=\"MiPushAppKey\" android:value=\"5141836012815mipush\" />",
+              "count": 1
+            },
+            {
+              "xml": "<meta-data android:name=\"MiPushAppId\" android:value=\"2882303761518360815mipush\" />",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.demoliu"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.demoliu"
+    },
+    "cordova-plugin-mipush": {
+      "MI_PUSH_APP_KEY": "5141836012815",
+      "MI_PUSH_APP_ID": "2882303761518360815",
+      "MI_PUSH_APP_IOS_KEY": "your_mipush_appkey",
+      "MI_PUSH_APP_IOS_ID": "your_mipush_appid",
+      "PACKAGE_NAME": "com.demoliu"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "com.demoliu"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
+      "clobbers": [
+        "device"
+      ]
+    },
+    {
+      "id": "cordova-plugin-mipush.MiPush",
+      "file": "plugins/cordova-plugin-mipush/www/MiPush.js",
+      "pluginId": "cordova-plugin-mipush",
+      "clobbers": [
+        "MiPush"
+      ]
+    },
+    {
+      "id": "cordova-plugin-x-toast.Toast",
+      "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+      "pluginId": "cordova-plugin-x-toast",
+      "clobbers": [
+        "window.plugins.toast"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-whitelist": "1.3.4",
+    "cordova-plugin-device": "2.0.3",
+    "cordova-plugin-mipush": "2.0.3",
+    "cordova-plugin-x-toast": "2.7.2"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "com.demoliu",
+  "displayName": "pushDemo",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cordova-android": "^8.1.0",
+    "cordova-plugin-device": "^2.0.3",
+    "cordova-plugin-mipush": "file:C:/Users/liuhm/Downloads/cordova-plugin-mipush-master",
+    "cordova-plugin-x-toast": "^2.7.2"
+  },
+  "devDependencies": {
+    "cordova-plugin-whitelist": "^1.3.4"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-mipush": {
+        "MI_PUSH_APP_KEY": "5141836012815",
+        "MI_PUSH_APP_ID": "2882303761518360815",
+        "MI_PUSH_APP_IOS_ID": "your_mipush_appid",
+        "MI_PUSH_APP_IOS_KEY": "your_mipush_appkey"
+      },
+      "cordova-plugin-x-toast": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}
